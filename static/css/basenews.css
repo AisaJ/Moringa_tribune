@@ -4,3 +4,9 @@ h1{
 body{
   font-size: 1.5rem;
 }
+.navbar{
+  background-color: black;
+}
+.articles{
+  margin-top: 1rem;
+}
