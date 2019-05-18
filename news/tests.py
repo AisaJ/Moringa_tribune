@@ -28,6 +28,7 @@ class ArticleTestClass(TestCase):
     self.new_tag = tags(name='testing')
     self.new_tag.save()
 
+    #Creating new article and saving
     self.new_article = Article (title = 'Test Article',post = 'This is a random test Post',editor  = self.mary)
     self.new_article.save()
     self.new_article.tags.add(self.new_tag)

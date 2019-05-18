@@ -2,13 +2,16 @@
 {% block content %}
   <div class="container articles">
     <div class="row">
-      <img src="{{article.article_image.url}}"  alt="Image" height="500">
+      <img src="{{article.article_image.url}}"  alt="Image" class="img-fluid" height="500">
     </div>
     <div class="row">
       <h1 class="text-center">{{article.title}}</h1>
     </div>
     <div class="row">
-      <p>{{article.post}}</p>
+      {% autoscape on %}
+      {{ article.post| safe }}
+      {% endautoescape %}
+     
     </div>
     <div class="row">
       <p>Posted {{article.pub_date|timesince}} by {{article.editor.first_name}}</p>

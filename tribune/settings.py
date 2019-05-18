@@ -38,6 +38,12 @@ else:
            default=config('DATABASE_URL')
        )
    }
+#Email configurations
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD =  config('EMAIL_HOST_PASSWORD')
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -63,6 +69,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tinymce',
     'bootstrap4',
     'news.apps.NewsConfig',
     'django.contrib.admin',
